@@ -8,6 +8,8 @@
         <a @click="scroll('downloads')">Downloads</a>
         <a @click="scroll('contact')">Contato</a>
       </nav>
+      <v-spacer class="d-flex d-sm-none"></v-spacer>
+      <v-btn class="d-flex d-sm-none" variant="flat" color="transparent"><v-icon size="3.5rem" color="white">mdi-menu</v-icon></v-btn>
     </div>
 </template>
 
@@ -24,17 +26,17 @@
 
 <style scoped>
 .headerDiv{
-  background: #114455;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 0;
+  padding: 2rem 9%;
+  background: transparent;
   z-index: 100;
 }
 .logo{
   position: relative;
-  font-size: 25px;
+  font-size: 2.5rem;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
@@ -47,7 +49,7 @@
   right: 0;
   width: 100%;
   height: 100%;
-  background: #114455;
+  background: #081b29;
   animation: showRight 1s ease forwards;
   animation-delay: .4s;
 }
@@ -58,10 +60,10 @@
   }
 }
 nav a{
-  font-size: 18px;
+  font-size: 1.7rem;
   color: #fff;
   font-weight: 500;
-  margin-left: 35px;
+  margin-left: 3.5rem;
   text-decoration: none;
   transition: .5s;
 }

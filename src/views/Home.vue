@@ -1,11 +1,11 @@
 <template>
-  <v-container>
+  <div>
     <home />
     <about />
     <service />
     <download />
     <contact />
-  </v-container>
+  </div>
 </template>
 
 <script setup>

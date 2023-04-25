@@ -17,7 +17,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;
+}
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+body{
+  background: #081b29;
+  color: #ededed;
 }
 /* body{
   background: linear-gradient(45deg, #ff0000, #fffb00, #5eff00, #ff5100, #00f7ff, #fffb00e2);

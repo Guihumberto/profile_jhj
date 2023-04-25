@@ -1,10 +1,10 @@
 <template>
-  <div class="sectionHome" id="home">
-    <v-row>
-      <v-col cols="12" sm="6">
-        <h2>Olá, Eu sou</h2>
-        <h1>João Humberto</h1>
-        <h3>>Lorem ipsum</h3>
+  <section class="home" id="home">
+    <div class="sectionHome">
+        <h1>Olá, Eu sou<span> Humberto</span></h1>
+        <div class="text-animate">
+          <h3>Lorem ipsum</h3>
+        </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe hic sint assumenda.
           Voluptas optio error, aliquid blanditiis necessitatibus aperiam. Maxime corrupti delectus accus
           antium id expedita modi qui impedit, facere perferendis!
@@ -12,9 +12,10 @@
         <div class="d-flex justify-start">
           <btnNew />
         </div>
-        <socialmidia-2 />
-      </v-col>
-      <v-col cols="12" sm="6"  class="text-center pa-0 imgHoverContiner">
+        <div class="socialmidia">
+          <socialmidia-2 />
+        </div>
+      <!-- <v-col cols="12" sm="6"  class="text-center pa-0 imgHoverContiner">
         <div class="imgHover"></div>
         <div >
           <v-img
@@ -23,9 +24,9 @@
            src="../../../public/pngwing.com.png">
           </v-img>
         </div>
-      </v-col>
-    </v-row>
-  </div>
+      </v-col> -->
+    </div>
+  </section>
 </template>
 
 <script>
@@ -39,11 +40,16 @@ import Socialmidia2 from '../socialmidia2.vue'
 </script>
 
 <style scoped>
-.sectionHome{
+.home{
   min-height: 100vh;
+  padding: 10rem 9% 2rem;
   display: flex;
-  justify-content: center;
   align-items: center;
+  padding: 0 9%;
+}
+.sectionHome{
+  position: relative;
+  max-width: 60rem;
   color: #fff;
 }
 .sectionHome h2 {
@@ -62,9 +68,9 @@ import Socialmidia2 from '../socialmidia2.vue'
 }
 .sectionHome h1 {
   position: relative;
-  font-size: 56px;
+  font-size: 5.6rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 .sectionHome h1::before{
@@ -85,13 +91,19 @@ import Socialmidia2 from '../socialmidia2.vue'
   }
 }
 
-.sectionHome h3 {
+.sectionHome .text-animate{
   position: relative;
-  font-size: 32px;
-  font-weight: 700;
-  color: #00abf0;
+  width: 32.8rem;
 }
 
+
+.sectionHome .text-animate h3{
+  position: relative;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: .7px #00abf0;
+}
 .sectionHome h3::before{
   content:'';
   position: absolute;
@@ -106,8 +118,8 @@ import Socialmidia2 from '../socialmidia2.vue'
 
 .sectionHome p {
   position: relative;
-  font-size: 16px;
-  margin: 20px 0 40px ;
+  font-size: 1.6rem;
+  margin: 2rem 0 4rem ;
 }
 
 .sectionHome p::before{
@@ -120,6 +132,11 @@ import Socialmidia2 from '../socialmidia2.vue'
   background: #081b29;
   animation: showRight 1s ease forwards;
   animation-delay: 1.6s;
+}
+.socialmidia{
+  position: absolute;
+  bottom: 10;
+  left: 0;
 }
 .imgHoverContiner{
   position: relative;
