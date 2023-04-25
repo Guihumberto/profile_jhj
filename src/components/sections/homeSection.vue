@@ -1,7 +1,7 @@
 <template>
   <section class="home" id="home">
     <div class="sectionHome">
-        <h1>Olá, Eu sou<span> Humberto</span></h1>
+        <h1>João<span class="text-blue"> Humberto</span></h1>
         <div class="text-animate">
           <h3>Lorem ipsum</h3>
         </div>

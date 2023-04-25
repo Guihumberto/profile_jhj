@@ -36,11 +36,11 @@ section{
   min-height: 100vh;
   padding: 10rem 9% 2rem;
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 0 9%;
 }
 .sectionAbout{
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;

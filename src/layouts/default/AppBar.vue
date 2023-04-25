@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex justify-center align-center headerDiv">
+    <div class="d-flex justify-center align-center headerDiv" :class="menuShow ? 'bg-transparent':'headerDivsticky'">
       <a @click="scroll('home')" class="mr-5 logo">JHJ.</a>
       <nav class="d-none d-sm-flex">
         <a @click="scroll('home')" class="active">Início</a>
@@ -13,15 +13,27 @@
     </div>
 </template>
 
-<script>
-  export default{
-    methods:{
-      scroll(refName){
-        const element = document.getElementById(refName)
-        element.scrollIntoView({behavior: "smooth"})
-      }
+<script setup>
+import { ref } from "vue"
+
+
+    const scroll = (refName) => {
+      const element = document.getElementById(refName)
+      element.scrollIntoView({behavior: "smooth"})
     }
-  }
+
+
+    let menuShow = ref(true)
+    window.onscroll = () => {
+
+      if(window.scrollY > 100) {
+        menuShow.value = false
+      } else {
+        menuShow.value = true
+      }
+
+    }
+
 </script>
 
 <style scoped>
@@ -31,8 +43,11 @@
   left: 0;
   width: 100%;
   padding: 2rem 9%;
-  background: transparent;
   z-index: 100;
+  transition: .3s;
+}
+.headerDivsticky{
+  background: #081b29;
 }
 .logo{
   position: relative;
