@@ -13,8 +13,6 @@
         commodi necessitatibus fugiat quisquam quia, architecto dolorem aspernatur! Ducimus hic
         repudiandae laudantium minus necessitatibus.
         Lorem ipsum dolor sit, amet consectetur
-        adipisicing elit. Velit suscipit reiciendis delectus rem provident molestiae repellendus
-        commodi necessitatibus fugiat quisquam quia, architecto dolorem aspernatur! Ducimus hic
         repudiandae laudantium minus necessitatibus.
       </p>
       <one-btn />
@@ -34,13 +32,12 @@ import oneBtn from '../oneBtn.vue'
 <style scoped>
 section{
   min-height: 100vh;
-  padding: 10rem 9% 2rem;
+  padding: 1rem 9% 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .sectionAbout{
-  min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -105,6 +102,12 @@ section{
   border-bottom: .2rem solid #323946;
   border-left: .2rem solid #00abf0;
   border-right: .2rem solid #00abf0;
+  animation: aboutSpinner 8s linear infinite;
+}
+@keyframes aboutSpinner {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .about-content h3{

@@ -12,8 +12,8 @@
         <div class="d-flex justify-start">
           <btnNew />
         </div>
-        <div class="socialmidia">
-          <socialmidia-2 />
+        <div class="socialmidia w-100">
+          <socialmidia-2 class="alingSociaMidia" />
         </div>
       <!-- <v-col cols="12" sm="6"  class="text-center pa-0 imgHoverContiner">
         <div class="imgHover"></div>
@@ -41,6 +41,7 @@ import Socialmidia2 from '../socialmidia2.vue'
 
 <style scoped>
 .home{
+  position: relative;
   min-height: 100vh;
   padding: 10rem 9% 2rem;
   display: flex;
@@ -72,7 +73,6 @@ import Socialmidia2 from '../socialmidia2.vue'
   font-weight: 700;
   line-height: 1.3;
 }
-
 .sectionHome h1::before{
   content:'';
   position: absolute;
@@ -84,25 +84,60 @@ import Socialmidia2 from '../socialmidia2.vue'
   animation: showRight 1s ease forwards;
   animation-delay: 1s;
 }
-
 @keyframes showRight {
   100%{
     width: 0;
   }
 }
-
 .sectionHome .text-animate{
   position: relative;
   width: 32.8rem;
 }
-
-
 .sectionHome .text-animate h3{
   position: relative;
   font-size: 3.2rem;
   font-weight: 700;
   color: transparent;
   -webkit-text-stroke: .7px #00abf0;
+  background-image: linear-gradient(#00abf0, #00abf0);
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-position: -33rem 0;
+  animation: homeBgText 6s linear infinite;
+  animation-delay: 2s;
+}
+.sectionHome .text-animate h3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-right: 2px solid #00abf0;
+  z-index: 1;
+  animation: homeCursorText 6s linear infinite;
+  animation-delay: 2s;
+}
+
+@keyframes homeBgText {
+  0%, 10%, 100% {
+    background-position: -33rem 0;
+  }
+  65%, 85%{
+    background-position: 0 0;
+  }
+}
+@keyframes homeCursorText {
+  0%, 10%, 100% {
+   width: 0;
+  }
+  65%, 78%, 85%{
+    width: 100%;
+    opacity: 1;
+  }
+  75%, 81% {
+    opacity: 0;
+  }
 }
 .sectionHome h3::before{
   content:'';
@@ -170,4 +205,25 @@ import Socialmidia2 from '../socialmidia2.vue'
   animation-delay: 3s;
 }
 
+@media (max-width: 680px){
+  .alingSociaMidia{
+    margin: auto;
+  }
+}
+@media (max-width: 371px) {
+  .home{
+    justify-content: center;
+  }
+  .sectionHome{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .socialmidia{
+    top: 50rem;
+    display: flex;
+    justify-content: center;
+  }
+}
 </style>

@@ -2,24 +2,49 @@
     <div class="d-flex justify-center align-center headerDiv" :class="menuShow ? 'bg-transparent':'headerDivsticky'">
       <a @click="scroll('home')" class="mr-5 logo">JHJ.</a>
       <nav class="d-none d-sm-flex">
-        <a @click="scroll('home')" class="active">Início</a>
-        <a @click="scroll('about')">Sobre</a>
-        <a @click="scroll('services')">Serviços</a>
-        <a @click="scroll('downloads')">Downloads</a>
-        <a @click="scroll('contact')">Contato</a>
+        <a @click="scroll('home')" :class="idNameActiveSelect == 'home'?'active':''">Início</a>
+        <a @click="scroll('about')" :class="idNameActiveSelect == 'about'?'active':''">Sobre</a>
+        <a @click="scroll('services')" :class="idNameActiveSelect == 'services'?'active':''">Serviços</a>
+        <a @click="scroll('downloads')" :class="idNameActiveSelect == 'downloads'?'active':''">Downloads</a>
+        <a @click="scroll('contact')" :class="idNameActiveSelect == 'contact'?'active':''">Contato</a>
       </nav>
       <v-spacer class="d-flex d-sm-none"></v-spacer>
-      <v-btn class="d-flex d-sm-none" variant="flat" color="transparent"><v-icon size="3.5rem" color="white">mdi-menu</v-icon></v-btn>
+      <v-btn
+        @click="showMenuSuspense = !showMenuSuspense"
+        class="d-flex d-sm-none" variant="flat" color="transparent">
+        <v-icon size="3.5rem" color="white">{{ showMenuSuspense ? 'mdi-close' : 'mdi-menu' }}</v-icon>
+      </v-btn>
     </div>
+    <v-expand-transition>
+      <div v-if="showMenuSuspense" class="menuSuspense d-flex d-sm-none">
+        <v-list class="bg-transparent text-white w-100" nav>
+          <v-list-item v-for="item, i in listMenu" :key="i" @click="scroll(item.id)" :class="idNameActiveSelect == item.id ? 'active':''">
+            {{ item.name }}
+          </v-list-item>
+        </v-list>
+      </div>
+    </v-expand-transition>
 </template>
 
 <script setup>
 import { ref } from "vue"
 
+    const listMenu = [
+      {id: 'home', name:"Início"},
+      {id: 'about', name:"Sobre"},
+      {id: 'services', name:"Serviços"},
+      {id: 'downloads', name:"Downloads"},
+      {id: 'contact', name:"Contato"},
+    ]
+
+    let idNameActiveSelect = ref('home')
 
     const scroll = (refName) => {
       const element = document.getElementById(refName)
       element.scrollIntoView({behavior: "smooth"})
+
+      idNameActiveSelect.value = refName
+      showMenuSuspense.value = false
     }
 
 
@@ -33,6 +58,8 @@ import { ref } from "vue"
       }
 
     }
+
+    let showMenuSuspense = ref(false)
 
 </script>
 
@@ -84,9 +111,24 @@ nav a{
 }
 
 nav a:hover,
+.active,
 .logo:hover {
   color: #0ef;
   text-shadow: 0 5px 20px #0ef;
+}
+
+.menuSuspense{
+  position: fixed;
+  top: 8rem;
+  left: 0;
+  width: 100%;
+  padding: 1rem 4%;
+  background: #081b29;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+  font-size: 1.7rem;
+  color: #fff;
+  font-weight: 500;
+  z-index: 100;
 }
 
 

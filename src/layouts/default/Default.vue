@@ -31,6 +31,47 @@ body{
   background: #081b29;
   color: #ededed;
 }
+
+/* BREAKPOINTS */
+@media(max-width: 1200px){
+  html {
+    font-size: 55%;
+  }
+}
+@media(max-width: 991px){
+  .headerDiv {
+    padding: 2rem 4%;
+  }
+  section{
+    padding: 2rem 4%;
+  }
+  .home{
+    padding: 2rem 4%;
+  }
+  .footer{
+    padding: 2rem 4%;
+  }
+}
+@media (max-width: 768px){
+  .headerDiv{
+    background: blue;
+  }
+  .navbar{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 4%;
+    background: blue;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+  }
+}
+@media(max-width: 520px){
+  html {
+    font-size: 50%;
+  }
+}
+
 /* body{
   background: linear-gradient(45deg, #ff0000, #fffb00, #5eff00, #ff5100, #00f7ff, #fffb00e2);
   background-size: 900% 200%;

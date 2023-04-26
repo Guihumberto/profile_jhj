@@ -5,38 +5,38 @@
       <div class="formulario my-16 text-light-blue-lighten-1" style="max-width: 800px;">
         <v-form>
           <v-row>
-            <v-col cols="12" sm="6">
+            <v-col cols="12" sm="6" class="my-0 py-0">
               <v-text-field
                 label="Nome Completo"
                 variant="outlined"
               ></v-text-field>
             </v-col>
-            <v-col cols="12" sm="6">
+            <v-col cols="12" sm="6" class="my-0 py-0">
               <v-text-field
                 label="E-mail"
                 variant="outlined"
               ></v-text-field>
             </v-col>
-            <v-col cols="12" sm="6">
+            <v-col cols="12" sm="6" class="my-0 py-0">
               <v-text-field
                 label="Celular"
                 variant="outlined"
               ></v-text-field>
             </v-col>
-            <v-col cols="12" sm="6">
+            <v-col cols="12" sm="6" class="my-0 py-0">
               <v-text-field
                 label="Assunto"
                 variant="outlined"
                 color="white"
               ></v-text-field>
             </v-col>
-            <v-col cols="12">
+            <v-col cols="12" class="my-0 py-0">
               <v-textarea
                 label="Sua Mensagem"
                 variant="outlined"
               ></v-textarea>
             </v-col>
-          <v-col cols="12" class="text-center">
+          <v-col cols="12" class="text-center my-0 py-0" >
             <one-btn />
           </v-col>
           </v-row>
