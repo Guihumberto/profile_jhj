@@ -1,9 +1,7 @@
 <template>
-  <div class="wrapper">
     <div class="btn-box">
       <a href="#">Entrar</a>
     </div>
-  </div>
 </template>
 
 <script>
@@ -14,30 +12,11 @@
 
 <style scoped>
 
-.wrapper .btn-box{
-  position: relative;
+.btn-box{
   display: flex;
   justify-content: center;
   width: 100%;
   height: 50px;
-}
-
-.wrapper .btn-box::before{
-  content:'';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: #081b29;
-  animation: showRight 1s ease forwards;
-  animation-delay: 1.9s;
-  z-index: 2;
-}
-@keyframes showRight {
-  100%{
-    width: 0;
-  }
 }
 .btn-box a{
   position: relative;

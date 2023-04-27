@@ -23,13 +23,19 @@
   scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;
 }
+:root{
+  --bg-color:#081b29;
+  --second-bg-color: #112e42;
+  --text-color: #ededed;
+  --main-color: #00abf0;
+}
 html{
   font-size: 62.5%;
   overflow-x: hidden;
 }
 body{
-  background: #081b29;
-  color: #ededed;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 /* BREAKPOINTS */
@@ -70,6 +76,27 @@ body{
   html {
     font-size: 50%;
   }
+}
+.animate{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: yellowgreen;
+  z-index: 98;
+}
+@keyframes showRight {
+  100%{
+    width: 0;
+  }
+}
+.show-animate{
+
+}
+.scroll{
+  transition: 1s ease;
+  transition-delay: calc(.3s / var(--i));
 }
 
 /* body{

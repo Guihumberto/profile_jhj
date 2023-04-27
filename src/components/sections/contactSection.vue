@@ -1,7 +1,10 @@
 <template>
   <section id="contact">
     <div class="sectionHome">
-      <h1 class="text-white">Fale <span class="text-blue">Comigo!</span> </h1>
+      <h1 class="text-white">
+        Fale <span class="text-blue">Comigo!</span>
+        <span class="animate" style="--i:1"></span>
+      </h1>
       <div class="formulario my-16 text-light-blue-lighten-1" style="max-width: 800px;">
         <v-form>
           <v-row>
@@ -39,6 +42,7 @@
           <v-col cols="12" class="text-center my-0 py-0" >
             <one-btn />
           </v-col>
+          <span class="animate" style="--i:2"></span>
           </v-row>
         </v-form>
       </div>
@@ -91,23 +95,14 @@ section{
 .formulario{
   position: relative;
 }
-.formulario::before{
-  content:'';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: #081b29;
+v-col{
+  position: relative;
+}
+#contact .animate{
   animation: showRight 1s ease forwards;
-  animation-delay: 5s;
+  animation-delay: calc(.3s * var(--i));
 }
 
-@keyframes showRight {
-  100%{
-    width: 0;
-  }
-}
 
 
 </style>

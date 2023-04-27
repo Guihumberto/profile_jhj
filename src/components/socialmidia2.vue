@@ -20,24 +20,6 @@
   display: flex;
   justify-content: space-between;
 }
-.home-sci::before{
-  content:'';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: #081b29;
-  animation: showRight 1s ease forwards;
-  animation-delay: 2.5s;
-  z-index: 2;
-}
-
-@keyframes showRight {
-  100%{
-    width: 0;
-  }
-}
 .home-sci a{
   position: relative;
   display: inline-flex;

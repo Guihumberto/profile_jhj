@@ -1,20 +1,26 @@
 <template>
-    <div class="d-flex justify-center align-center headerDiv" :class="menuShow ? 'bg-transparent':'headerDivsticky'">
-      <a @click="scroll('home')" class="mr-5 logo">JHJ.</a>
+    <header class="d-flex justify-center align-center headerDiv" :class="menuShow ? 'bg-transparent':'headerDivsticky'">
+      <a @click="scroll('home')" class="mr-5 logo">
+        JHJ.
+        <span class="animate" style="--i:1"></span>
+      </a>
       <nav class="d-none d-sm-flex">
         <a @click="scroll('home')" :class="idNameActiveSelect == 'home'?'active':''">Início</a>
         <a @click="scroll('about')" :class="idNameActiveSelect == 'about'?'active':''">Sobre</a>
         <a @click="scroll('services')" :class="idNameActiveSelect == 'services'?'active':''">Serviços</a>
         <a @click="scroll('downloads')" :class="idNameActiveSelect == 'downloads'?'active':''">Downloads</a>
         <a @click="scroll('contact')" :class="idNameActiveSelect == 'contact'?'active':''">Contato</a>
+
+        <span class="animate" style="--i:2"></span>
       </nav>
       <v-spacer class="d-flex d-sm-none"></v-spacer>
       <v-btn
-        @click="showMenuSuspense = !showMenuSuspense"
+        @click="showMenuSuspense = !showMenuSuspense" id="menuBar"
         class="d-flex d-sm-none" variant="flat" color="transparent">
         <v-icon size="3.5rem" color="white">{{ showMenuSuspense ? 'mdi-close' : 'mdi-menu' }}</v-icon>
+        <span class="animate" style="--i:2"></span>
       </v-btn>
-    </div>
+    </header>
     <v-expand-transition>
       <div v-if="showMenuSuspense" class="menuSuspense d-flex d-sm-none">
         <v-list class="bg-transparent text-white w-100" nav>
@@ -49,6 +55,7 @@ import { ref } from "vue"
 
 
     let menuShow = ref(true)
+
     window.onscroll = () => {
 
       if(window.scrollY > 100) {
@@ -56,7 +63,6 @@ import { ref } from "vue"
       } else {
         menuShow.value = true
       }
-
     }
 
     let showMenuSuspense = ref(false)
@@ -79,27 +85,13 @@ import { ref } from "vue"
 .logo{
   position: relative;
   font-size: 2.5rem;
-  color: #fff;
+  color: var(--text-color);
   text-decoration: none;
   font-weight: 600;
   transition: .5s;
 }
-.logo::before{
-  content:'';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: #081b29;
-  animation: showRight 1s ease forwards;
-  animation-delay: .4s;
-}
-
-@keyframes showRight {
-  100%{
-    width: 0;
-  }
+nav{
+  position: relative;
 }
 nav a{
   font-size: 1.7rem;
@@ -109,14 +101,15 @@ nav a{
   text-decoration: none;
   transition: .5s;
 }
-
 nav a:hover,
 .active,
 .logo:hover {
   color: #0ef;
   text-shadow: 0 5px 20px #0ef;
 }
-
+#menuBar{
+  position: relative;
+}
 .menuSuspense{
   position: fixed;
   top: 8rem;
@@ -129,6 +122,18 @@ nav a:hover,
   color: #fff;
   font-weight: 500;
   z-index: 100;
+}
+.logo .animate,
+nav .animate,
+#menuBar .animate {
+  animation: showRight 1s ease forwards;
+  animation-delay: calc(.3s * var(--i));
+}
+@media (max-width: 570px){
+  .headerDiv{
+    padding-right: 1%;
+    padding-left: 4%;
+  }
 }
 
 

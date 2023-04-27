@@ -15,10 +15,17 @@
   import download from '@/components/sections/dowloadsSection.vue'
   import contact from '@/components/sections/contactSection.vue'
 
+
+  // insere uma class de css no componente html, no exemplo insere a classe stick no elemento html header
+  // window.onscroll = () => {
+  //   let header = document.querySelector('header')
+  //   header.classList.toggle('stick', window.scrollY > 100)
+  // }
+
+
 </script>
 
 <style scoped>
-
 
 </style>>
 
