@@ -32,6 +32,13 @@
 import oneBtn from '../oneBtn.vue'
 import ImageSpinCircle from './imageSpinCircle.vue'
 
+// let sections = document.querySelectorAll('section')
+//   window.onscroll = () => {
+//     sections.forEach(sec => {
+//       console.log(sec);
+//     })
+//   }
+
 </script>
 
 <style scoped>

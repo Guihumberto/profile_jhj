@@ -10,6 +10,7 @@
   import AppBar from './AppBar.vue';
   import DefaultView from './View.vue'
   import footerBar from '@/layouts/default/Footer.vue'
+
 </script>
 
 <style>
@@ -83,7 +84,7 @@ body{
   right: 0;
   width: 100%;
   height: 100%;
-  background: yellowgreen;
+  background: var(--bg-color);
   z-index: 98;
 }
 @keyframes showRight {
