@@ -1,25 +1,20 @@
 <template>
-  <div class="footerBar">
+  <section class="footerBar" id="footer">
     <v-container>
       <div class="footerContainer">
-        <p class="text-white">João Humberto Silva Ribeiro Júnior <span class="animate" style="--i:1"></span></p>
+        <p class="text-white">João Humberto Silva Ribeiro Júnior</p>
         <div class="btn-up">
           <v-btn  @click="scroll('home')" class="active" variant="outlined" color="blue"><v-icon size="30">mdi-arrow-up-bold</v-icon></v-btn>
-          <span class="animate" style="--i:1"></span>
         </div>
       </div>
     </v-container>
-  </div>
+  </section>
 </template>
 
-<script>
-  export default{
-    methods:{
-      scroll(refName){
+<script setup>
+      const scroll = (refName) => {
         const element = document.getElementById(refName)
         element.scrollIntoView({behavior: "smooth"})
-      }
-    }
   }
 </script>
 
@@ -40,10 +35,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.footerBar .animate{
-  animation: showRight 1s ease forwards;
-  animation-delay: calc(.3s * var(--i));
-}
+
 
 @media (max-width: 462px){
   .footerContainer{

@@ -3,11 +3,11 @@
 
     <h2 class="heading">
       Download
-      <span class="animate" style="--i:1"></span>
+      <span class="animate scroll" style="--i:1"></span>
     </h2>
     <div class="dowloadContent">
       <text-effect />
-      <span class="animate" style="--i:2"></span>
+      <span class="animate scroll" style="--i:2"></span>
     </div>
   </section>
 </template>
@@ -43,9 +43,10 @@ section{
 .dowloadContent{
   position: relative;
 }
-.dowloadSection .animate{
-  animation: showRight 1s ease forwards;
-  animation-delay: calc(.3s * var(--i));
+
+.dowloadSection.show-animate .animate.scroll {
+  transition-delay: calc(.3s * var(--i));
+  width: 0;
 }
 
 

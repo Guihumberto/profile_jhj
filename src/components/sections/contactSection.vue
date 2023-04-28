@@ -3,7 +3,7 @@
     <div class="sectionHome">
       <h1 class="text-white">
         Fale <span class="text-blue">Comigo!</span>
-        <span class="animate" style="--i:1"></span>
+        <span class="animate scroll" style="--i:1"></span>
       </h1>
       <div class="formulario my-16 text-light-blue-lighten-1" style="max-width: 800px;">
         <v-form>
@@ -42,9 +42,9 @@
           <v-col cols="12" class="text-center my-0 py-0" >
             <one-btn />
           </v-col>
-          <span class="animate" style="--i:2"></span>
-          </v-row>
-        </v-form>
+        </v-row>
+      </v-form>
+      <span class="animate scroll" style="--i:2"></span>
       </div>
     </div>
   </section>
@@ -98,9 +98,13 @@ section{
 v-col{
   position: relative;
 }
-#contact .animate{
-  animation: showRight 1s ease forwards;
-  animation-delay: calc(.3s * var(--i));
+
+.formulario .animate.scroll{
+  height: 105%;
+}
+#contact.show-animate .animate.scroll{
+  transition-delay: calc(.3s * var(--i));
+  width: 0;
 }
 
 

@@ -6,22 +6,22 @@
 
     <div class="image-circle">
       <image-spin-circle />
-      <span class="animate" style="--i:2;"></span>
+      <span class="animate scroll" style="--i:2;"></span>
     </div>
 
     <div class="about-content">
-      <h3>Lorem ipsum <span class="animate" style="--i:3;"></span></h3>
+      <h3>Lorem ipsum <span class="animate scroll" style="--i:3;"></span></h3>
       <p>Lorem ipsum dolor sit, amet consectetur
         adipisicing elit. Velit suscipit reiciendis delectus rem provident molestiae repellendus
         commodi necessitatibus fugiat quisquam quia, architecto dolorem aspernatur! Ducimus hic
         repudiandae laudantium minus necessitatibus.
         Lorem ipsum dolor sit, amet consectetur
         repudiandae laudantium minus necessitatibus.
-        <span class="animate" style="--i:4;"></span>
+        <span class="animate scroll" style="--i:4;"></span>
       </p>
       <div class="btn-about">
         <one-btn />
-        <span class="animate" style="--i:5;"></span>
+        <span class="animate scroll" style="--i:5;"></span>
       </div>
     </div>
 
@@ -31,13 +31,6 @@
 <script setup>
 import oneBtn from '../oneBtn.vue'
 import ImageSpinCircle from './imageSpinCircle.vue'
-
-// let sections = document.querySelectorAll('section')
-//   window.onscroll = () => {
-//     sections.forEach(sec => {
-//       console.log(sec);
-//     })
-//   }
 
 </script>
 
@@ -80,9 +73,9 @@ section{
 .btn-about{
   position: relative;
 }
-.sectionAbout .animate {
-  animation: showRight 1s ease forwards;
-  animation-delay: calc(.3s * var(--i));
+.sectionAbout.show-animate .animate.scroll {
+  transition-delay: calc(.3s * var(--i));
+  width: 0;
 }
 
 </style>

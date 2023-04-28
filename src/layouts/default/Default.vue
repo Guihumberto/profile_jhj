@@ -2,14 +2,12 @@
   <v-app>
     <app-bar />
     <default-view />
-  <footerBar />
   </v-app>
 </template>
 
 <script setup>
   import AppBar from './AppBar.vue';
   import DefaultView from './View.vue'
-  import footerBar from '@/layouts/default/Footer.vue'
 
 </script>
 
@@ -92,13 +90,21 @@ body{
     width: 0;
   }
 }
-.show-animate{
 
-}
-.scroll{
+.animate.scroll{
   transition: 1s ease;
   transition-delay: calc(.3s / var(--i));
+  animation: none;
 }
+
+section:nth-child(2) .animate.scroll{
+  background: var(--second-bg-color);
+}
+section:nth-child(4) .animate.scroll{
+  background: var(--second-bg-color);
+}
+
+
 
 /* body{
   background: linear-gradient(45deg, #ff0000, #fffb00, #5eff00, #ff5100, #00f7ff, #fffb00e2);

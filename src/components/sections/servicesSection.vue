@@ -3,16 +3,16 @@
     <div class="sectionServices">
       <h2 class="heading">
         Minha <span class="text-blue">Jornada</span>
-        <span class="animate" style="--i:1"></span>
+        <span class="animate scroll" style="--i:1"></span>
       </h2>
       <v-row class="services-row">
         <v-col cols="12" sm="6" class="education-column">
           <h3 class="title">
             Formação
-            <span class="animate" style="--i:2"></span>
+            <span class="animate scroll" style="--i:2"></span>
           </h3>
           <div class="services-box">
-            <span class="animate" style="--i:3"></span>
+            <span class="animate scroll" style="--i:3"></span>
             <div class="service-content" v-for="item, i in 3" :key="i">
               <div class="content">
                 <div class="year"> <v-icon size="small" class="mr-2">mdi-calendar</v-icon>2005-2010</div>
@@ -28,10 +28,10 @@
         <v-col cols="12" sm="6" class="education-column">
           <h3 class="title">
             Experiência
-            <span class="animate" style="--i:4"></span>
+            <span class="animate scroll" style="--i:4"></span>
           </h3>
           <div class="services-box">
-            <span class="animate" style="--i:5"></span>
+            <span class="animate scroll" style="--i:5"></span>
             <div class="service-content" v-for="item, i in 3" :key="i">
               <div class="content">
                 <div class="year"> <v-icon size="small" class="mr-2">mdi-calendar</v-icon>2005-2010</div>
@@ -143,8 +143,11 @@
   font-size: 1.6rem;
   padding-top: .5rem;
 }
+#services .services-box .animate.scroll {
+  width: 105%;
+}
 
-#services .animate{
+#services.show-animate .animate.scroll{
   animation: showRight 1s ease forwards;
   animation-delay: calc(.3s * var(--i));
 }

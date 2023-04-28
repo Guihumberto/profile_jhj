@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { ref , onMounted} from "vue"
 
     const listMenu = [
       {id: 'home', name:"Início"},
@@ -56,14 +56,70 @@ import { ref } from "vue"
 
     let menuShow = ref(true)
 
-    window.onscroll = () => {
+    onMounted(() => {
+      let sections = document.querySelectorAll('section')
 
-      if(window.scrollY > 100) {
-        menuShow.value = false
-      } else {
-        menuShow.value = true
+      window.onscroll = () => {
+
+        //tranparencia da barra de menu
+        if(window.scrollY > 100) {
+          menuShow.value = false
+        } else {
+          menuShow.value = true
+        }
+
+        // incluir classe para animação
+           sections.forEach(sec => {
+            let id = sec.getAttribute('id')
+            let top = window.scrollY
+            let offset = sec.offsetTop - 100
+            let heigth = sec.offsetHeight
+
+            if(top >= offset && top < offset + heigth) {
+
+              sec.classList.add('show-animate')
+              switchActiveId(id)
+            } else {
+              sec.classList.remove('show-animate')
+            }
+           })
+
+          //  animation footer on scroll
+          let footer = document.querySelector('footer')
+          if(footer) {
+            footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight)
+            console.log(footer);
+          }
+      }
+    })
+
+    const switchActiveId = (value) => {
+      switch(value) {
+        case 'home':
+          idNameActiveSelect.value = 'home'
+          break;
+
+        case 'about':
+          idNameActiveSelect.value = 'about'
+          break;
+
+        case 'services':
+        idNameActiveSelect.value = 'services'
+          break;
+
+        case 'downloads':
+          idNameActiveSelect.value = 'downloads'
+          break;
+
+        case 'contact':
+        idNameActiveSelect.value = 'contact'
+          break;
+
+        default:
+          idNameActiveSelect.value = 'home'
       }
     }
+
 
     let showMenuSuspense = ref(false)
 

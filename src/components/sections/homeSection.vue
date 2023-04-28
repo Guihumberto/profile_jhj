@@ -1,26 +1,26 @@
 <template>
-  <section class="home" :class="showAnimate ? 'show-animate':''" id="home">
+  <section class="home show-animate" id="home">
     <div class="sectionHome">
         <h1>
           João<span class="text-blue"> Humberto</span>
-          <span class="animate" style="--i:3"></span>
+          <span class="animate scroll" style="--i:3"></span>
         </h1>
         <div class="text-animate">
           <text-effect />
-          <span class="animate" style="--i:4"></span>
+          <span class="animate scroll" style="--i:4"></span>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe hic sint assumenda.
           Voluptas optio error, aliquid blanditiis necessitatibus aperiam. Maxime corrupti delectus accus
           antium id expedita modi qui impedit, facere perferendis!
-          <span class="animate" style="--i:5"></span>
+          <span class="animate scroll" style="--i:5"></span>
         </p>
         <div class="btns-entrar d-flex justify-start">
           <btnNew />
-          <span class="animate" style="--i:6"></span>
+          <span class="animate scroll" style="--i:6"></span>
         </div>
         <div class="socialmidia w-100">
           <socialmidia-2 class="alingSociaMidia" />
-          <span class="animate" style="--i:7"></span>
+          <span class="animate scroll" style="--i:7"></span>
         </div>
       <!-- <v-col cols="12" sm="6"  class="text-center pa-0 imgHoverContiner">
         <div class="imgHover"></div>
@@ -72,6 +72,7 @@ import TextEffect from '../textEffect.vue'
 
 .sectionHome h1 {
   position: relative;
+  display: inline-block;
   font-size: 5.6rem;
   font-weight: 700;
   line-height: 1.3;
@@ -112,7 +113,8 @@ import TextEffect from '../textEffect.vue'
   opacity: 0.8;
 }
 .home .animate,
-.text-animate .animate{
+.text-animate .animate,
+.home.show-animate .animate.scroll{
   animation: showRight 1s ease forwards;
   animation-delay: calc(.3s * var(--i));
 }

@@ -5,6 +5,7 @@
     <service />
     <download />
     <contact />
+    <footer-app />
   </div>
 </template>
 
@@ -14,18 +15,21 @@
   import service from '@/components/sections/servicesSection.vue'
   import download from '@/components/sections/dowloadsSection.vue'
   import contact from '@/components/sections/contactSection.vue'
+  import footerApp from '@/components/sections/Footer.vue'
 
 
   // insere uma class de css no componente html, no exemplo insere a classe stick no elemento html header
   // window.onscroll = () => {
-  //   let header = document.querySelector('header')
-  //   header.classList.toggle('stick', window.scrollY > 100)
+  //   // let header = document.querySelectorAll('div')
+  //   // header.classList.toggle('stick', window.scrollY > 100)
+  //   console.log('seletor:');
   // }
 
 
 </script>
 
-<style scoped>
+<style>
 
-</style>>
+
+</style>
 
