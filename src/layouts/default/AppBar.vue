@@ -191,6 +191,4 @@ nav .animate,
     padding-left: 4%;
   }
 }
-
-
 </style>

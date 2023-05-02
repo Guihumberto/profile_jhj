@@ -1,6 +1,6 @@
 <template>
   <section class="dowloadSection" id="downloads">
-
+    <btn-up />
     <h2 class="heading">
       Download
       <span class="animate scroll" style="--i:1"></span>
@@ -12,12 +12,9 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import textEffect from '../textEffect.vue'
-  export default {
-  components: { textEffect },
-
-  }
+import btnUp from '@/components/btns/btnUp.vue'
 </script>
 
 <style scoped>
@@ -43,9 +40,13 @@ section{
 .dowloadContent{
   position: relative;
 }
+.dowloadSection .animate{
+  animation: showRight 1s ease forwards;
+  animation-delay: calc(.3s * var(--i));
+}
 
 .dowloadSection.show-animate .animate.scroll {
-  transition-delay: calc(.3s * var(--i));
+  animation-delay: calc(.3s * var(--i));
   width: 0;
 }
 

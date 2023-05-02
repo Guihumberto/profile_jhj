@@ -10,7 +10,7 @@
 
 <style>
 .mainPage{
-  background: #081b29;
+  background: var(--bg-color);
 }
 
 </style>

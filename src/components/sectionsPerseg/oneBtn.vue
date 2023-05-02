@@ -1,13 +1,28 @@
 <template>
     <div class="btn-box">
-      <a href="#">Entrar</a>
+      <a @click="scroll(path)">{{ title }}</a>
     </div>
 </template>
 
 <script>
-  export default {
-
+export default{
+  props: {
+    title: {
+      type: String,
+      default: "Exemplo"
+    },
+    path: {
+      type: String,
+      default: "home"
+    }
+  },
+  methods:{
+    scroll(refName){
+      const element = document.getElementById(refName)
+      element.scrollIntoView({behavior: "smooth"})
+    }
   }
+}
 </script>
 
 <style scoped>
@@ -15,7 +30,6 @@
 .btn-box{
   display: flex;
   justify-content: center;
-  width: 100%;
   height: 50px;
 }
 .btn-box a{
@@ -55,5 +69,12 @@
 }
 .btn-box a:hover::before{
   width: 100%;
+}
+@media (max-width: 420px){
+  .btn-box a{
+    width: 120px;
+    height: 80%;
+    font-size: 15px;
+  }
 }
 </style>
