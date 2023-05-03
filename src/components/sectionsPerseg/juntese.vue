@@ -6,6 +6,7 @@
         relacionados ao processo (ações judiciais, denúncias ao MPE, TCE, recursos hierarquico impróprio e outros.) <br>
         Cadastra-se para ser avisado assim que postado os documentos.
       </p>
+      <h3 class="text-h4 mb-3 bg-amber-darken-4 pa-2">CADASTRE-SE</h3>
       <v-form class="formulario">
         <v-text-field
           label="E-mail"
