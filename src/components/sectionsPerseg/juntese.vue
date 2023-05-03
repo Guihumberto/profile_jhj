@@ -7,13 +7,14 @@
         Cadastra-se para ser avisado assim que postado os documentos.
       </p>
       <h3 class="text-h4 mb-3 bg-amber-darken-4 pa-2">CADASTRE-SE</h3>
-      <v-form class="formulario">
+      <v-form class="formulario" @submit.prevent="cadMail()">
         <v-text-field
           label="E-mail"
           prepend-inner-icon="mdi-at"
           v-model="email"
           density="compact"
           variant="outlined"
+          clearable
           :rules="[
             (val) => isValidEmail(val) || 'Digite um endereço de e-mail válido',
           ]"
@@ -21,6 +22,8 @@
         <v-btn
           color="amber-darken-4"
           class="mb-5 ml-2"
+          type="submit"
+          :disabled="!isValidEmail(email)"
         >ok</v-btn>
       </v-form>
     </div>
@@ -28,6 +31,9 @@
 </template>
 
 <script>
+import { useCountStore } from '@/store/CountStore'
+const countStore = useCountStore()
+
   export default {
     data(){
       return{
@@ -35,12 +41,18 @@
       }
     },
     methods: {
-    isValidEmail(email) {
-        return String(email)
-          .toLowerCase()
-          .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          );
+      isValidEmail(email) {
+          return String(email)
+            .toLowerCase()
+            .match(
+              /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+      },
+      cadMail(){
+        if(this.isValidEmail(this.email)){
+          countStore.cadMail(this.email)
+          this.email = ''
+        }
       }
     }
   }
