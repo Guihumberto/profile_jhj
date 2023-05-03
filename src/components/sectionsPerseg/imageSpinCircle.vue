@@ -27,6 +27,7 @@
   border-radius: 50%;
   border: .2rem solid var(--main-color);
   margin: auto;
+  background: linear-gradient(45deg, blue, red );
 }
 .about-img .circle-spin{
   position: absolute;
