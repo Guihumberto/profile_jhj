@@ -7,14 +7,9 @@
     </h2>
     <div class="dowloadContent">
      <div class="text-center">
-      <div class="border pa-5 mb-5" cols="12">Processo Administrativo Disciplinar Nº 4783/2019</div>
-      <div class="processos">
-        <h3>Volume I</h3>
-        <div><one-btn :title="'Download'" /></div>
-      </div>
-      <div class="processos">
-        <h3>Volume II</h3>
-        <div><one-btn :title="'Download'"  /></div>
+      <div class="border pa-5 mb-5" cols="12">Processo Administrativo Disciplinar Nº 4783/2020</div>
+      <div>
+        <dialogBtn />
       </div>
      </div>
      <span class="animate scroll" style="--i:2;"></span>
@@ -23,7 +18,7 @@
 </template>
 
 <script setup>
-import oneBtn from '@/components/sectionsPerseg/oneBtn.vue';
+import dialogBtn from './dialog.vue';
 </script>
 
 <style scoped>
@@ -53,13 +48,6 @@ section{
 }
 .heading span{
 color: var(--main-color);
-}
-.processos{
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-  margin: 12px 0px;
 }
 .dowloadSection.show-animate .animate.scroll {
   animation-delay: calc(.3s * var(--i));

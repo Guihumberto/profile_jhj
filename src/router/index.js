@@ -16,28 +16,6 @@ const routes = [
       },
     ],
   },
-  {
-    path: '/',
-    component: () => import('@/layouts/default/ExampleLayout'),
-    children: [
-      {
-        path: '/exemple',
-        name: 'Exemple',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Example.vue'),
-      },
-    ],
-  },
-  {
-    path: '/',
-    component: () => import('@/layouts/default/ProcessoLayout'),
-    children: [
-      {
-        path: '/processo',
-        name: 'Processo',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/processo.vue'),
-      },
-    ],
-  },
 ]
 
 const router = createRouter({

@@ -144,4 +144,25 @@ h1 {
     bottom: -10rem;
   }
 }
+@media (max-width: 420px){
+  .home{
+    justify-content: center;
+  }
+  .sectionHome{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .text-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-content p{
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+  }
+}
 </style>

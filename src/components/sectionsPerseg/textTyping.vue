@@ -72,7 +72,7 @@ div{
   left: 0;
   width: 400px;
   height: 90px;
-  background: transparent;
+  background-image: linear-gradient(to right, #000 , rgb(46, 45, 45));
   border-left: 2px solid #0ef;
   animation: typing 1.5s steps(14) infinite alternate;
 }

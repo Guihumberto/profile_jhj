@@ -1,15 +1,12 @@
 <template>
   <div class="home-sci">
-    <a href=""><v-icon>mdi-whatsapp</v-icon></a>
-    <a href=""><v-icon>mdi-instagram</v-icon></a>
-    <a href=""><v-icon>mdi-youtube</v-icon></a>
+    <a href="mailto:juninho.joao@hotmail.com"><v-icon>mdi-email</v-icon></a>
+    <a target="_blank" href="https://www.instagram.com/humbertojhj/"><v-icon>mdi-instagram</v-icon></a>
+    <a target="_blank" href="https://www.linkedin.com/in/joao-humberto-6a4713232/"><v-icon>mdi-linkedin</v-icon></a>
   </div>
 </template>
 
 <script>
-  export default {
-
-  }
 </script>
 
 <style scoped>

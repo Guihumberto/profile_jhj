@@ -10,9 +10,11 @@
     </div>
 
     <div class="about-content">
-      <h3>Lorem ipsum <span class="animate scroll" style="--i:3;"></span></h3>
-      <p>Lorem ipsum dolor sit, amet consectetur
-        adipisicing elit. Velit suscipit reiciendis delectus rem provident molestiae repellendus
+      <h3>João Humberto Silva Ribeiro Júnior<span class="animate scroll" style="--i:3;"></span></h3>
+      <p>
+        Servidor Público efetivo desde 2010, passou por diversos órgãos públicos Municipais, Estaduais e Federais.
+        Atuou de forma a combater irregularidades e ilegalidades no IPREV/MA no ano de 2019, ano no qual começou a sofrer
+        represálias e perseguição da alta gestão da autarquia.
 
         <span class="animate scroll" style="--i:4;"></span>
       </p>

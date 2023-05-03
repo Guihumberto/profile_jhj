@@ -18,8 +18,22 @@ export default{
   },
   methods:{
     scroll(refName){
-      const element = document.getElementById(refName)
-      element.scrollIntoView({behavior: "smooth"})
+      if(refName == 'pack1'){
+        const url1 = 'https://drive.google.com/file/d/1Y4jeJEP1l44yVW7j8nzw_0M8738Lrm2v/view?usp=sharing'
+        var win = window.open(url1, '_blank');
+        win.focus();
+      } else if (refName == 'pack2') {
+        const url2 = 'https://drive.google.com/file/d/1TgeGxBS2dqRwMWk7GtT4_rOFrQuMyVh9/view?usp=sharing'
+        var win2 = window.open(url2, '_blank');
+        win2.focus();
+      } else if (refName == 'pack3') {
+        const url3 = 'https://drive.google.com/file/d/1KAF_SFPgnYLkD14BfvpHeHKY53zNX-R3/view?usp=share_link'
+        var win3 = window.open(url3, '_blank');
+        win3.focus();
+      } else {
+        const element = document.getElementById(refName)
+        element.scrollIntoView({behavior: "smooth"})
+      }
     }
   }
 }
