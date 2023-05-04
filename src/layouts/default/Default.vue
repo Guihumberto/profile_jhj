@@ -9,6 +9,12 @@
   import AppBar from './ProcessoAppBar.vue';
   import DefaultView from './View.vue'
 
+  import { useCountStore } from '@/store/CountStore'
+  const countStore = useCountStore()
+
+  countStore.Acesso()
+
+
 </script>
 
 <style>

@@ -2,9 +2,9 @@
   <section id="juntese" class="juntese">
     <div class="juntese-content">
       <p>
-        Em breve será postado todos os documentos da denúncia e todos os documentos
+        Em breve será postado todos os documentos da denúncia e os
         relacionados ao processo (ações judiciais, denúncias ao MPE, TCE, recursos hierarquico impróprio e outros.) <br>
-        Cadastra-se para ser avisado assim que postado os documentos.
+        Cadastra-se para ser avisado assim que disponível.
       </p>
       <h3 class="text-h4 mb-3 titlejuntese pa-2">CADASTRE-SE</h3>
       <v-form v-if="!send" class="formulario" @submit.prevent="cadMail()">

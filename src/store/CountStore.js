@@ -54,6 +54,38 @@ export const useCountStore = defineStore("count", {
         console.log(e);
       }
 
+    },
+    async Acesso(){
+      let acesso = {
+        count: 1,
+        ip: 1010,
+        date: Date.now()
+      }
+      try{
+        const res = await fetch('https://perseg-app-default-rtdb.firebaseio.com/acesso.json', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(acesso)
+        })
+
+        const dataDB = await res.json()
+        console.log(dataDB);
+
+      } catch(e) {
+        console.log(e);
+      }
+    },
+    async getIpClient() {
+      try {
+        const os = require('os');
+        const networkInfo = os.networkInterfaces();
+        console.log(networkInfo) // objeto
+        console.log(networkInfo.lo[0].address) // ip
+      } catch (error) {
+        console.error(error);
+      }
     }
   },
 });
