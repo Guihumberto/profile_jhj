@@ -1,14 +1,12 @@
 <template>
  <div class="about-img">
-    <!-- <img src="photo-circle.png" /> -->
+    <img :src="img" />
     <span class="circle-spin"></span>
   </div>
 </template>
 
-<script>
-  export default {
-
-  }
+<script setup>
+  import img from '../../../public/photo-circle.png'
 </script>
 
 <style scoped>
