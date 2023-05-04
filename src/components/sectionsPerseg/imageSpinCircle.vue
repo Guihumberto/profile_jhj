@@ -1,6 +1,6 @@
 <template>
  <div class="about-img">
-    <img src="photo-circle.png" />
+    <!-- <img src="photo-circle.png" /> -->
     <span class="circle-spin"></span>
   </div>
 </template>
