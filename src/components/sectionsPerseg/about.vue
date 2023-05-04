@@ -14,7 +14,7 @@
       <p>
         Servidor Público efetivo desde 2010, passou por diversos órgãos públicos Municipais, Estaduais e Federais.
         Atuou de forma a combater irregularidades e ilegalidades no IPREV/MA no ano de 2019, ano no qual começou a sofrer
-        represálias e perseguição da alta gestão da autarquia.
+        represálias e perseguição da alta gestão.
 
         <span class="animate scroll" style="--i:4;"></span>
       </p>

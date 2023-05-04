@@ -53,6 +53,17 @@ section:nth-child(2) .animate.scroll{
     width: 0;
   }
 }
+
+@keyframes slideRightt {
+  0%{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .animate.scroll{
   transition: 1s ease;
   transition-delay: calc(.3s / var(--i));

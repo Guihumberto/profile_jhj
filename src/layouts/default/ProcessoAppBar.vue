@@ -2,23 +2,21 @@
   <header class="d-flex justify-center align-center" :class="menuShow ? 'bg-transparent':'headerDivsticky'">
     <a class="logo" @click="scroll('home')">
       <v-icon size="small" color="white">mdi-close-octagon</v-icon> Perseguição
-      <span class="animate" style="--i:1"></span>
     </a>
     <nav class="navBar d-none d-sm-flex">
       <a
+        :style="`--i:${i+1}`"
         :class="idNameActiveSelect == item.path ? 'active':''"
         @click="scroll(item.path)" v-for="item, i in menuList"
         :key="i">
         {{ item.name }}
       </a>
-      <span class="animate" style="--i:2"></span>
     </nav>
     <v-spacer class="d-flex d-sm-none"></v-spacer>
       <v-btn
         @click="showMenuSuspense = !showMenuSuspense" id="menuBar"
         class="d-flex d-sm-none" variant="flat" color="transparent">
         <v-icon size="3.5rem" color="white">{{ showMenuSuspense ? 'mdi-close' : 'mdi-menu' }}</v-icon>
-        <span class="animate" style="--i:2"></span>
       </v-btn>
   </header>
   <v-expand-transition>
@@ -130,6 +128,8 @@ header .logo {
   font-weight: 700;
   transition: .3s;
   color: #fff;
+  opacity: 0;
+  animation: slideRightt  1s ease forwards;
 }
 .headerDivsticky{
   background: var(--bg-color);
@@ -142,9 +142,17 @@ header .logo {
   color: #fff;
 }
 .navBar a{
-  margin-left: 2rem;
+  margin-left: 3rem;
   font-size: 1.7rem;
   font-weight: 500;
+  text-decoration: none;
+  opacity: 0;
+  animation: slideRightt 1s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+}
+#menuBar{
+  opacity: 0;
+  animation: slideRightt  1.5s ease forwards;
 }
 .active{
   color: var(--main-color);
@@ -152,6 +160,7 @@ header .logo {
 a:hover {
   color: var(--main-color);
   text-shadow: 0 5px 20px var(--main-color);
+  cursor: pointer;
 }
 .menuSuspense{
   position: fixed;
@@ -166,12 +175,7 @@ a:hover {
   font-weight: 500;
   z-index: 100;
 }
-.logo .animate,
-nav .animate,
-#menuBar .animate {
-  animation: showRight 1s ease forwards;
-  animation-delay: calc(.3s * var(--i));
-}
+
 @media (max-width: 570px){
   header{
     padding-right: 1%;

@@ -1,31 +1,35 @@
 <template>
-  <section id="juntese">
+  <section id="juntese" class="juntese">
     <div class="juntese-content">
       <p>
         Em breve será postado todos os documentos da denúncia e todos os documentos
         relacionados ao processo (ações judiciais, denúncias ao MPE, TCE, recursos hierarquico impróprio e outros.) <br>
         Cadastra-se para ser avisado assim que postado os documentos.
       </p>
-      <h3 class="text-h4 mb-3 bg-amber-darken-4 pa-2">CADASTRE-SE</h3>
-      <v-form class="formulario" @submit.prevent="cadMail()">
-        <v-text-field
-          label="E-mail"
-          prepend-inner-icon="mdi-at"
-          v-model="email"
-          density="compact"
-          variant="outlined"
-          clearable
-          :rules="[
-            (val) => isValidEmail(val) || 'Digite um endereço de e-mail válido',
-          ]"
-        ></v-text-field>
-        <v-btn
-          color="amber-darken-4"
-          class="mb-5 ml-2"
-          type="submit"
-          :disabled="!isValidEmail(email)"
-        >ok</v-btn>
+      <h3 class="text-h4 mb-3 titlejuntese pa-2">CADASTRE-SE</h3>
+      <v-form v-if="!send" class="formulario" @submit.prevent="cadMail()">
+          <v-text-field
+            label="E-mail"
+            prepend-inner-icon="mdi-at"
+            v-model="email"
+            density="compact"
+            variant="outlined"
+            style="width: 80%;"
+            clearable
+            :rules="[
+              (val) => isValidEmail(val) || 'Digite um endereço de e-mail válido',
+            ]"
+          ></v-text-field>
+          <v-btn
+            color="white"
+            class="mb-5 ml-2"
+            type="submit"
+            :disabled="!isValidEmail(email)"
+          >ok</v-btn>
       </v-form>
+      <v-alert v-else class="alert-msg text-amber-darken-4 text-h6" icon="mdi-email">
+        <span>E-mail cadastrado com sucesso!</span>
+      </v-alert>
     </div>
   </section>
 </template>
@@ -37,7 +41,8 @@ const countStore = useCountStore()
   export default {
     data(){
       return{
-        email: ''
+        email: '',
+        send: false
       }
     },
     methods: {
@@ -52,6 +57,7 @@ const countStore = useCountStore()
         if(this.isValidEmail(this.email)){
           countStore.cadMail(this.email)
           this.email = ''
+          this.send = true
         }
       }
     }
@@ -64,8 +70,8 @@ const countStore = useCountStore()
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background: var(--second-bg-color);
-  padding: 10px 0;
+  padding: 20px 10px;
+  background: var(--main-color);
   border-bottom: 2px black;
 }
 .juntese-content{
@@ -77,21 +83,39 @@ const countStore = useCountStore()
 }
 .juntese-content p{
   padding: 0 3% 2%;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   max-width: 1080px;
+  text-align: center;
+}
+.titlejuntese{
+  background: white;
+  font-weight: 600;
+  color: var(--main-color);
+  border-radius: 10px;
+  pointer-events: none;
 }
 .formulario{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 30%;
-  padding-bottom: 10px;
+  padding: 0 3%;
+  width: 50%;
 }
-@media (max-width: 700px){
+.alert-msg{
+  opacity: 0;
+  animation: slideRightt  2.4s ease forwards;
+}
+@media (max-width: 886px){
   .formulario{
-    min-width: 90%;
-    justify-content: left;
-    align-items: left;
+    width: 80%;
+  }
+}
+@media (max-width: 472px){
+  .formulario{
+    width: 100%;
+  }
+  .juntese-content p{
+    font-size: 1.5rem;
   }
 }
 </style>

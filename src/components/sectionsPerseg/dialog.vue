@@ -78,5 +78,8 @@ const countStore = useCountStore()
   align-items: center;
   margin: 12px 0px;
 }
+.processos h3{
+  font-size: 1.8rem;
+}
 
 </style>

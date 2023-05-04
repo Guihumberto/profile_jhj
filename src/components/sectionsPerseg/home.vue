@@ -5,29 +5,25 @@
         <v-icon class="ml-n3 mr-3 icon-out" color="white">mdi-close-octagon</v-icon>
         <div class="text-content">
           <v-icon class="mr-5 mb-5 w-100 d-flex d-sm-none" size="10rem" color="orange-darken-2">mdi-close-octagon</v-icon>
-          <h1>Perserguição a</h1>
+          <h1>Perseguição a</h1>
           <h1><span>Servidor Público</span></h1>
-          <span class="animate scroll" style="--i:1;"></span>
         </div>
       </div>
       <div class="text-animate">
         <text-typing />
-        <span class="animate scroll" style="--i:2;"></span>
       </div>
       <p>
-       O objetivo dessa página é disponiblizar arquivo para download o
-       processo administrativo disciplinar 4783/2020 (PAD) do qual foi alvo por
-       denunciar irregularidades da gestão do IPREV/MA em 2018.
+       O objetivo deste site é disponiblizar os arquivos para download do
+       processo administrativo disciplinar (PAD) 4783/2020 do qual fui alvo por
+       denunciar ilegalidades e irregularidades da gestão do IPREV/MA em 2019.
       </p>
       <div class="botoes">
         <one-btn class="mr-5" :title="'Sobre'" :path="'about'"/>
         <one-btn :title="'Download'" :path="'download'" />
-        <span class="animate scroll" style="--i:3;"></span>
       </div>
       <div class="social-midia">
         <div class="social-midia-content">
           <socialmidia />
-          <span class="animate scroll" style="--i:4;"></span>
         </div>
       </div>
     </div>
@@ -64,10 +60,16 @@ section{
 .text-content{
   position: relative;
 }
+.title{
+  opacity: 0;
+  animation: slideRightt  1.2s ease forwards;
+}
 .mdi-close-octagon{
   position: relative;
   font-size: 12rem;
   transition: .3s;
+  animation: zoomIn 1s ease forwards;
+  animation-delay: 2.1s;
 }
 h1 {
   position: relative;
@@ -85,35 +87,40 @@ h1 {
   position: relative;
   font-size: 2.6rem;
   margin-top: 0.6rem;
+  opacity: 0;
+  animation: slideRightt  1.5s ease forwards;
 }
 .home-content p {
   position: relative;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin: 2rem 0 4rem ;
+  opacity: 0;
+  animation: slideRightt  1.8s ease forwards;
 }
 .botoes{
   position: relative;
   display: flex;
   justify-content: left;
   align-items: center;
+  opacity: 0;
+  animation: slideRightt  2.1s ease forwards;
 }
 .social-midia{
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: -40px;
+  opacity: 0;
+  animation: slideRightt  2.4s ease forwards;
 }
 .social-midia-content{
   position: relative;
   display: flex;
   justify-content: left;
 }
-.home .animate,
-.text-animate .animate,
-.home.show-animate .animate.scroll{
-  animation: showRight 1s ease forwards;
-  animation-delay: calc(.3s * var(--i));
-}
 @media (max-width: 700px){
+  .home{
+    justify-content: center;
+  }
   h1 {
     font-size: 4rem;
   }
@@ -139,9 +146,9 @@ h1 {
     justify-content: center;
   }
 }
-@media (max-width: 390px){
+@media (max-width: 391px){
   .social-midia{
-    bottom: -10rem;
+    bottom: -8rem;
   }
 }
 @media (max-width: 420px){
@@ -163,6 +170,16 @@ h1 {
   .home-content p{
     text-align: center;
     text-shadow: 1px 1px 2px black;
+  }
+}
+@keyframes zoomIn {
+  0%{
+    opacity: 0;
+    transform: scale(0);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
   }
 }
 </style>
