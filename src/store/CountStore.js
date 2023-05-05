@@ -2,7 +2,8 @@ import { defineStore } from "pinia";
 
 export const useCountStore = defineStore("count", {
   state: () => ({
-    count: 0
+    count: 0,
+    ipAddress: 0,
   }),
   getters: {
     readCount(){
@@ -14,7 +15,8 @@ export const useCountStore = defineStore("count", {
       let count = {
         count: this.count++,
         pack: pack,
-        date: Date.now()
+        date: Date.now(),
+        ip: this.ipAddress
       }
       try{
         const res = await fetch('https://perseg-app-default-rtdb.firebaseio.com/count.json', {
@@ -56,9 +58,10 @@ export const useCountStore = defineStore("count", {
 
     },
     async Acesso(){
+      this.getIpClient()
       let acesso = {
         count: 1,
-        ip: 1010,
+        ip: this.ipAddress,
         date: Date.now()
       }
       try{
@@ -79,10 +82,10 @@ export const useCountStore = defineStore("count", {
     },
     async getIpClient() {
       try {
-        const os = require('os');
-        const networkInfo = os.networkInterfaces();
-        console.log(networkInfo) // objeto
-        console.log(networkInfo.lo[0].address) // ip
+        const response = await fetch('https://api.ipify.org?format=json');
+        const data = await response.json();
+        this.ipAddress = data.ip;
+        console.log(this.ipAddress);
       } catch (error) {
         console.error(error);
       }

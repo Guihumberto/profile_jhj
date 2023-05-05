@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <span class="first-text">Eu sou vítima de</span>
+    <span class="first-text">Eu fui vítima de</span>
     <ul class="sec-texts">
       <li><span>Assédio</span></li>
       <li><span>Ilegalidade</span></li>
@@ -43,10 +43,10 @@ div{
   position: relative;
   top: 0;
   font-size: 40px;
-  color: #0ef;
+  color: #FF1744;
   list-style: none;
   padding: 0 20px;
-  text-shadow: 0 0 10px #0ef;
+  text-shadow: 0 0 10px #FF1744;
   animation: slide 12s steps(4) infinite, 6s infinite;
 }
 
@@ -73,7 +73,7 @@ div{
   width: 400px;
   height: 90px;
   background-image: linear-gradient(to right, #000 , rgb(46, 45, 45));
-  border-left: 2px solid #0ef;
+  border-left: 2px solid #FF1744;
   animation: typing 1.5s steps(14) infinite alternate;
 }
 

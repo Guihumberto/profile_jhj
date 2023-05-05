@@ -4,7 +4,7 @@
       <div class="d-flex justify-center align-center title">
         <v-icon class="ml-n3 mr-3 icon-out" color="white">mdi-close-octagon</v-icon>
         <div class="text-content">
-          <v-icon class="mr-5 mb-5 w-100 d-flex d-sm-none" size="10rem" color="orange-darken-2">mdi-close-octagon</v-icon>
+          <v-icon class="mr-5 mb-5 w-100 d-flex d-sm-none" color="orange-darken-2">mdi-close-octagon</v-icon>
           <h1>Perseguição a</h1>
           <h1><span>Servidor Público</span></h1>
         </div>
@@ -66,7 +66,7 @@ section{
 }
 .mdi-close-octagon{
   position: relative;
-  font-size: 12rem;
+  font-size: 10rem;
   transition: .3s;
   animation: zoomIn 1s ease forwards;
   animation-delay: 2.1s;
@@ -167,9 +167,16 @@ h1 {
     justify-content: center;
     align-items: center;
   }
+  .text-content h1{
+    font-size: 3.5rem;
+  }
+  .mdi-close-octagon{
+    font-size: 8rem;
+  }
   .home-content p{
     text-align: center;
     text-shadow: 1px 1px 2px black;
+    font-size: 1.5rem;
   }
 }
 @keyframes zoomIn {
