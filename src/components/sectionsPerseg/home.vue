@@ -2,16 +2,16 @@
   <section class="home show-animate" id="home">
     <div class="home-content">
       <div class="d-flex justify-center align-center title">
-        <v-icon class="ml-n3 mr-3 icon-out" color="white">mdi-close-octagon</v-icon>
+        <!-- <v-icon class="ml-n3 mr-3 icon-out" color="white">mdi-close-octagon</v-icon> -->
         <div class="text-content">
           <v-icon class="mr-5 mb-5 w-100 d-flex d-sm-none" color="orange-darken-2">mdi-close-octagon</v-icon>
           <h1>Perseguição a</h1>
           <h1><span>Servidor Público</span></h1>
         </div>
       </div>
-      <div class="text-animate">
+      <!-- <div class="text-animate">
         <text-typing />
-      </div>
+      </div> -->
       <p>
        O objetivo deste site é disponiblizar os arquivos para download do
        processo administrativo disciplinar (PAD) 4783/2020 do qual fui alvo por

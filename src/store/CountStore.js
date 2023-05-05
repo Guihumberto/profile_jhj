@@ -38,7 +38,8 @@ export const useCountStore = defineStore("count", {
     async cadMail(mail){
       let data = {
         email: mail,
-        date: Date.now()
+        date: Date.now(),
+        ip: this.ipAddress
       }
       try{
         const res = await fetch('https://perseg-app-default-rtdb.firebaseio.com/mails.json', {

@@ -15,6 +15,7 @@
             density="compact"
             variant="outlined"
             style="width: 80%;"
+            focused
             clearable
             :rules="[
               (val) => isValidEmail(val) || 'Digite um endereço de e-mail válido',

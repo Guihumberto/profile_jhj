@@ -1,5 +1,6 @@
 <template>
   <section class="sectionAbout text-center text-white" id="about">
+    <bubbles />
     <h1 class="heading">Sobre <span>Mim</span>
       <span class="animate scroll" style="--i:1;"></span>
     </h1>
@@ -30,11 +31,13 @@
 <script setup>
 import oneBtn from '@/components/sectionsPerseg/oneBtn.vue';
 import ImageSpinCircle from './imageSpinCircle.vue'
+import bubbles from './bubbles.vue';
 
 </script>
 
 <style scoped>
 section{
+  position: relative;
   min-height: 100vh;
   padding: 1rem 9% 2rem;
   display: flex;
